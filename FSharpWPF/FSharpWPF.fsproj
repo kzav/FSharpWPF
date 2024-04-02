@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <WarnOn>3390;$(WarnOn)</WarnOn> 
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="NLog.xsd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="App.config" />
+    <Resource Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Compile Include="MainWindow.xaml.fs" />
+    <Compile Include="App.fs" />
+    <Resource Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+  
+</ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FsXaml.Wpf" Version="3.1.6" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+    <PackageReference Include="NLog" Version="5.2.8" />
+  </ItemGroup>
+</Project>
